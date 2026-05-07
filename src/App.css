@@ -1306,3 +1306,29 @@ body[data-theme="light"] #education .bg-\[var\(--card\)\] {
     0 10px 30px rgba(15, 23, 42, 0.06),
     0 2px 10px rgba(99, 102, 241, 0.05) !important;
 }
+
+/* =========================================
+   MOBILE THEME TOGGLE
+========================================= */
+
+.mobile-theme-toggle {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+
+  .mobile-theme-toggle {
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 9999;
+  }
+
+}

@@ -6,7 +6,7 @@ import "./App.css";
 
 // 🔹 Icons & libs
 import { Moon, Sun } from "lucide-react";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 // 🔹 Hooks
@@ -14,10 +14,10 @@ import useIntersectionObserver from "./hooks/useIntersectionObserver";
 
 // 🔹 Lazy-loaded components (HEAVY sections)
 const ReCAPTCHA = lazy(() => import("react-google-recaptcha"));
- const Skills = lazy(() => import("./components/Skills.jsx"));
- const Education = lazy(() => import("./components/Education.jsx"));
+const Skills = lazy(() => import("./components/Skills.jsx"));
+const Education = lazy(() => import("./components/Education.jsx"));
 const Achievements = lazy(() => import("./components/Achievements.jsx"));
- const Projects = lazy(() => import("./components/Projects.jsx"));
+const Projects = lazy(() => import("./components/Projects.jsx"));
 
 
 
@@ -40,15 +40,6 @@ const Header = ({ isScrolled, theme, toggleTheme }) => {
                 <a href="#home" className="nav-logo" onClick={closeNav}>Atharva.</a>
 
 
-                {/* --- NEW: This is the 3-line hamburger button --- */}
-                <div className={`hamburger ${isNavOpen ? 'hamburger-open' : ''}`} onClick={() => setIsNavOpen(!isNavOpen)}>
-                    <span className="hamburger-line"></span>
-                    <span className="hamburger-line"></span>
-                    <span className="hamburger-line"></span>
-
-
-
-                </div>
 
 
                 {/* --- UPDATED: Your nav links now have a special class and onClick handlers --- */}
@@ -75,6 +66,21 @@ const Header = ({ isScrolled, theme, toggleTheme }) => {
 
                 </ul>
             </nav>
+
+            {/* Mobile Theme Toggle */}
+            <div className="mobile-theme-toggle">
+                <button
+                    aria-label="Toggle theme"
+                    onClick={toggleTheme}
+                    className="theme-toggle-btn"
+                >
+                    {theme === "dark" ? (
+                        <Sun size={18} />
+                    ) : (
+                        <Moon size={18} />
+                    )}
+                </button>
+            </div>
         </header>
     );
 };
@@ -383,142 +389,142 @@ function App() {
                 </Section>
 
 
-               <Section id="about">
+                <Section id="about">
 
-    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl px-6 sm:px-10 py-14">
+                    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl px-6 sm:px-10 py-14">
 
-        {/* Background Glow */}
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-500/10 blur-[120px] rounded-full"></div>
+                        {/* Background Glow */}
+                        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-500/10 blur-[120px] rounded-full"></div>
 
-        <div className="relative z-10">
+                        <div className="relative z-10">
 
-            {/* Heading */}
-            <div className="text-center">
+                            {/* Heading */}
+                            <div className="text-center">
 
-                <p className="text-purple-500 uppercase tracking-[0.35em] text-sm font-medium">
-                    About Me
-                </p>
+                                <p className="text-purple-500 uppercase tracking-[0.35em] text-sm font-medium">
+                                    About Me
+                                </p>
 
-                <h2 className="mt-3 text-1xl sm:text-3xl font-black tracking-tight leading-tight">
-                    Developer • Designer • Problem Solver<br />
-                </h2>
+                                <h2 className="mt-3 text-1xl sm:text-3xl font-black tracking-tight leading-tight">
+                                    Developer • Designer • Problem Solver<br />
+                                </h2>
 
-                <p className="mt-6 max-w-3xl mx-auto text-zinc-400 leading-relaxed text-base sm:text-lg">
-                    I’m Atharva Deshpande, a passionate Information Technology student
-                    and developer focused on creating modern, responsive, and visually
-                    engaging digital experiences. I enjoy transforming ideas into
-                    real-world applications through clean code, creative UI/UX design,
-                    and efficient problem-solving.
-                </p>
+                                <p className="mt-6 max-w-3xl mx-auto text-zinc-400 leading-relaxed text-base sm:text-lg">
+                                    I’m Atharva Deshpande, a passionate Information Technology student
+                                    and developer focused on creating modern, responsive, and visually
+                                    engaging digital experiences. I enjoy transforming ideas into
+                                    real-world applications through clean code, creative UI/UX design,
+                                    and efficient problem-solving.
+                                </p>
 
-            </div>
+                            </div>
 
-            {/* Stats */}
-            <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            {/* Stats */}
+                            <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur-xl">
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur-xl">
 
-                    <h3 className="text-4xl font-black text-purple-400">
-                        10+
-                    </h3>
+                                    <h3 className="text-4xl font-black text-purple-400">
+                                        10+
+                                    </h3>
 
-                    <p className="mt-3 text-zinc-400">
-                        Technologies & Tools
-                    </p>
+                                    <p className="mt-3 text-zinc-400">
+                                        Technologies & Tools
+                                    </p>
 
-                </div>
+                                </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur-xl">
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur-xl">
 
-                    <h3 className="text-4xl font-black text-blue-400">
-                        5+
-                    </h3>
+                                    <h3 className="text-4xl font-black text-blue-400">
+                                        5+
+                                    </h3>
 
-                    <p className="mt-3 text-zinc-400">
-                        Real-World Projects
-                    </p>
+                                    <p className="mt-3 text-zinc-400">
+                                        Real-World Projects
+                                    </p>
 
-                </div>
+                                </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur-xl">
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur-xl">
 
-                    <h3 className="text-4xl font-black text-pink-400">
-                        2026
-                    </h3>
+                                    <h3 className="text-4xl font-black text-pink-400">
+                                        2026
+                                    </h3>
 
-                    <p className="mt-3 text-zinc-400">
-                        Diploma Graduation Year
-                    </p>
+                                    <p className="mt-3 text-zinc-400">
+                                        Diploma Graduation Year
+                                    </p>
 
-                </div>
+                                </div>
 
-            </div>
+                            </div>
 
-            {/* Bottom Content */}
-            <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            {/* Bottom Content */}
+                            <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-                {/* Left */}
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+                                {/* Left */}
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
 
-                    <h3 className="text-2xl font-bold">
-                        What I Focus On
-                    </h3>
+                                    <h3 className="text-2xl font-bold">
+                                        What I Focus On
+                                    </h3>
 
-                    <ul className="mt-6 space-y-4 text-zinc-400 leading-relaxed">
+                                    <ul className="mt-6 space-y-4 text-zinc-400 leading-relaxed">
 
-                        <li>
-                            ✦ Modern React & Frontend Development
-                        </li>
+                                        <li>
+                                            ✦ Modern React & Frontend Development
+                                        </li>
 
-                        <li>
-                            ✦ Responsive UI/UX Design
-                        </li>
+                                        <li>
+                                            ✦ Responsive UI/UX Design
+                                        </li>
 
-                        <li>
-                            ✦ Java & Software Development
-                        </li>
+                                        <li>
+                                            ✦ Java & Software Development
+                                        </li>
 
-                        <li>
-                            ✦ API Integration & Backend Basics
-                        </li>
+                                        <li>
+                                            ✦ API Integration & Backend Basics
+                                        </li>
 
-                        <li>
-                            ✦ Performance Optimization & Clean Architecture
-                        </li>
+                                        <li>
+                                            ✦ Performance Optimization & Clean Architecture
+                                        </li>
 
-                    </ul>
+                                    </ul>
 
-                </div>
+                                </div>
 
-                {/* Right */}
-                <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 p-8 backdrop-blur-xl">
+                                {/* Right */}
+                                <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 p-8 backdrop-blur-xl">
 
-                    <h3 className="text-2xl font-bold">
-                        My Vision
-                    </h3>
+                                    <h3 className="text-2xl font-bold">
+                                        My Vision
+                                    </h3>
 
-                    <p className="mt-6 text-zinc-400 leading-relaxed">
-                        My goal is to continuously grow as a developer by learning
-                        advanced technologies, building impactful applications,
-                        and creating user experiences that combine performance,
-                        creativity, and functionality.
-                    </p>
+                                    <p className="mt-6 text-zinc-400 leading-relaxed">
+                                        My goal is to continuously grow as a developer by learning
+                                        advanced technologies, building impactful applications,
+                                        and creating user experiences that combine performance,
+                                        creativity, and functionality.
+                                    </p>
 
-                    <p className="mt-5 text-zinc-400 leading-relaxed">
-                        I believe great software is not only about writing code —
-                        it’s about solving problems, delivering value, and creating
-                        experiences people genuinely enjoy using.
-                    </p>
+                                    <p className="mt-5 text-zinc-400 leading-relaxed">
+                                        I believe great software is not only about writing code —
+                                        it’s about solving problems, delivering value, and creating
+                                        experiences people genuinely enjoy using.
+                                    </p>
 
-                </div>
+                                </div>
 
-            </div>
+                            </div>
 
-        </div>
+                        </div>
 
-    </div>
+                    </div>
 
-</Section>
+                </Section>
 
                 <Section id="achievements">
                     <Suspense fallback={<div className="loader">Loading achievements...</div>}>
@@ -528,7 +534,7 @@ function App() {
 
                 <Section id="contact">
 
-    <div className="
+                    <div className="
 relative
 overflow-hidden
 
@@ -550,139 +556,214 @@ py-10
 lg:py-12
 ">
 
-        {/* Background Glow */}
-        <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-500/10 blur-[120px] rounded-full"></div>
+                        {/* Background Glow */}
+                        <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
+                        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-500/10 blur-[120px] rounded-full"></div>
 
-        <div className="relative z-10">
+                        <div className="relative z-10">
 
-            {/* Heading */}
-            <div className="text-center">
+                            {/* Heading */}
+                            <div className="text-center">
 
-                <p className="text-cyan-400 uppercase tracking-[0.35em] text-sm font-medium">
-                    Contact
-                </p>
-
-                <h2 className="mt-3 text-3xl sm:text-5xl  font-black tracking-tight leading-tight">
-                    Let’s Build Something Amazing
-                </h2>
-
-                <p className="mt-6 max-w-3xl mx-auto text-zinc-400 leading-relaxed text-base sm:text-lg">
-                    Have a project idea, collaboration opportunity, or just want to connect?
-                    I’m always open to discussing creative ideas, development work,
-                    and exciting opportunities.
-                </p>
-
-            </div>
-
-            {/* Main Grid */}
-            <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-                {/* LEFT SIDE */}
-                <div className="space-y-6">
-
-                    {/* Email Card */}
-                    <div className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl">
-
-                        <div className="flex items-center gap-4">
-
-                            <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl">
-                                <FaEnvelope />
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-bold">
-                                    Email
-                                </h3>
-
-                                <p className="text-zinc-400 mt-1 break-all">
-                                    atharvadeshpande2006@gmail.com
+                                <p className="text-cyan-400 uppercase tracking-[0.35em] text-sm font-medium">
+                                    Contact
                                 </p>
+
+                                <h2 className="mt-3 text-3xl sm:text-5xl  font-black tracking-tight leading-tight">
+                                    Let’s Build Something Amazing
+                                </h2>
+
+                                <p className="mt-6 max-w-3xl mx-auto text-zinc-400 leading-relaxed text-base sm:text-lg">
+                                    Have a project idea, collaboration opportunity, or just want to connect?
+                                    I’m always open to discussing creative ideas, development work,
+                                    and exciting opportunities.
+                                </p>
+
                             </div>
 
-                        </div>
+                            {/* Main Grid */}
+                            <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                    </div>
+                                {/* LEFT SIDE */}
+                                <div className="space-y-6">
 
-                    {/* LinkedIn Card */}
-                    <div className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl">
 
-                        <div className="flex items-center gap-4">
+                                    {/* Email Card */}
+                                    <a
+                                        href="mailto:atharvadeshpande2006@gmail.com"
+                                        className="
+        block
+        rounded-3xl
+        border
+        border-white/10
+        bg-white/5
+        p-7
+        backdrop-blur-xl
+        transition-all
+        duration-300
+        hover:scale-[1.02]
+        hover:border-cyan-400/40
+        hover:shadow-[0_0_35px_rgba(34,211,238,0.15)]
+    "
+                                    >
 
-                            <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl">
-                                <FaLinkedin />
-                            </div>
+                                        <div className="flex items-center gap-4">
 
-                            <div>
-                                <h3 className="text-xl font-bold">
-                                    LinkedIn
-                                </h3>
+                                            <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl">
+                                                <FaEnvelope />
+                                            </div>
 
-                                <a
-                                    href="https://www.linkedin.com/in/atharva-deshpande-223926332/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-zinc-400 mt-1 block hover:text-white transition-all duration-300 break-all"
-                                >
-                                    Connect with me professionally
-                                </a>
-                            </div>
+                                            <div>
+                                                <h3 className="text-xl font-bold">
+                                                    Email
+                                                </h3>
 
-                        </div>
+                                                <p className="text-zinc-400 mt-1 break-all hover:text-cyan-400 transition-all duration-300">
+                                                    atharvadeshpande2006@gmail.com
+                                                </p>
+                                            </div>
 
-                    </div>
+                                        </div>
 
-                    {/* Extra Info Card */}
-                    <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 p-6 backdrop-blur-xl">
+                                    </a>
 
-                        <h3 className="text-2xl font-bold">
-                            Available For
-                        </h3>
+                                    {/* LinkedIn Card */}
 
-                        <div className="mt-6 flex flex-wrap gap-3">
+                                    {/* LinkedIn Card */}
+                                    <a
+                                        href="https://www.linkedin.com/in/atharva-deshpande-223926332/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="
+            block
+            rounded-3xl
+            border
+            border-white/10
+            bg-white/5
+            p-7
+            backdrop-blur-xl
+            transition-all
+            duration-300
+            hover:scale-[1.02]
+            hover:border-blue-400/40
+            hover:shadow-[0_0_35px_rgba(59,130,246,0.15)]
+        "
+                                    >
 
-                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
-                                Web Development
-                            </span>
+                                        <div className="flex items-center gap-4">
 
-                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
-                                UI/UX Design
-                            </span>
+                                            <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl">
+                                                <FaLinkedin />
+                                            </div>
 
-                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
-                                Java Projects
-                            </span>
+                                            <div>
+                                                <h3 className="text-xl font-bold">
+                                                    LinkedIn
+                                                </h3>
 
-                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
-                                Freelance Work
-                            </span>
+                                                <p className="text-zinc-400 mt-1 block hover:text-blue-400 transition-all duration-300 break-all">
+                                                    Connect with me professionally
+                                                </p>
+                                            </div>
 
-                        </div>
+                                        </div>
 
-                    </div>
+                                    </a>
 
-                </div>
 
-                {/* RIGHT SIDE FORM */}
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
 
-                    <form onSubmit={handleContactSubmit} className="space-y-5">
+                                    {/* GitHub Card */}
+                                    <a
+                                        href="https://github.com/Atharva667"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="
+        block
+        rounded-3xl
+        border
+        border-white/10
+        bg-white/5
+        p-7
+        backdrop-blur-xl
+        transition-all
+        duration-300
+        hover:scale-[1.02]
+        hover:border-purple-400/40
+        hover:shadow-[0_0_35px_rgba(168,85,247,0.15)]
+    "
+                                    >
 
-                        <div>
+                                        <div className="flex items-center gap-4">
 
-                            <label className="block mb-3 text-sm text-zinc-400">
-                                Your Name
-                            </label>
+                                            <div className="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl">
+                                                <FaGithub />
+                                            </div>
 
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Enter your name"
-                                value={formData.name}
-                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                required
-                                disabled={formStatus === 'sending'}
-                                className="
+                                            <div>
+                                                <h3 className="text-xl font-bold">
+                                                    GitHub
+                                                </h3>
+
+                                                <p className="text-zinc-400 mt-1 hover:text-purple-400 transition-all duration-300">
+                                                    View My Projects & Repositories
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+
+                                    {/* Extra Info Card */}
+                                    <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 p-6 backdrop-blur-xl">
+
+                                        <h3 className="text-2xl font-bold">
+                                            Available For
+                                        </h3>
+
+                                        <div className="mt-6 flex flex-wrap gap-3">
+
+                                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
+                                                Web Development
+                                            </span>
+
+                                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
+                                                UI/UX Design
+                                            </span>
+
+                                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
+                                                Java Projects
+                                            </span>
+
+                                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300">
+                                                Freelance Work
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                {/* RIGHT SIDE FORM */}
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+
+                                    <form onSubmit={handleContactSubmit} className="space-y-5">
+
+                                        <div>
+
+                                            <label className="block mb-3 text-sm text-zinc-400">
+                                                Your Name
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                placeholder="Enter your name"
+                                                value={formData.name}
+                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                                required
+                                                disabled={formStatus === 'sending'}
+                                                className="
                                     w-full
                                     rounded-2xl
                                     border border-white/10
@@ -694,25 +775,25 @@ lg:py-12
                                     transition-all
                                     duration-300
                                 "
-                            />
+                                            />
 
-                        </div>
+                                        </div>
 
-                        <div>
+                                        <div>
 
-                            <label className="block mb-3 text-sm text-zinc-400">
-                                Your Email
-                            </label>
+                                            <label className="block mb-3 text-sm text-zinc-400">
+                                                Your Email
+                                            </label>
 
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                value={formData.email}
-                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                required
-                                disabled={formStatus === 'sending'}
-                                className="
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Enter your email"
+                                                value={formData.email}
+                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                required
+                                                disabled={formStatus === 'sending'}
+                                                className="
                                     w-full
                                     rounded-2xl
                                     border border-white/10
@@ -724,25 +805,25 @@ lg:py-12
                                     transition-all
                                     duration-300
                                 "
-                            />
+                                            />
 
-                        </div>
+                                        </div>
 
-                        <div>
+                                        <div>
 
-                            <label className="block mb-3 text-sm text-zinc-400">
-                                Message
-                            </label>
+                                            <label className="block mb-3 text-sm text-zinc-400">
+                                                Message
+                                            </label>
 
-                            <textarea
-                                name="message"
-                                rows="6"
-                                placeholder="Write your message..."
-                                value={formData.message}
-                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                required
-                                disabled={formStatus === 'sending'}
-                                className="
+                                            <textarea
+                                                name="message"
+                                                rows="6"
+                                                placeholder="Write your message..."
+                                                value={formData.message}
+                                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                                required
+                                                disabled={formStatus === 'sending'}
+                                                className="
                                     w-full
                                     rounded-2xl
                                     border border-white/10
@@ -755,21 +836,21 @@ lg:py-12
                                     transition-all
                                     duration-300
                                 "
-                            ></textarea>
+                                            ></textarea>
 
-                        </div>
+                                        </div>
 
-                        <Suspense fallback={<div style={{ height: 78 }} />}>
-                            <ReCAPTCHA
-                                sitekey="6Le4w1UsAAAAANOuf-wY0Xrb87R9zR7aPOjgaXra"
-                                onChange={(token) => setCaptchaToken(token)}
-                            />
-                        </Suspense>
+                                        <Suspense fallback={<div style={{ height: 78 }} />}>
+                                            <ReCAPTCHA
+                                                sitekey="6Le4w1UsAAAAANOuf-wY0Xrb87R9zR7aPOjgaXra"
+                                                onChange={(token) => setCaptchaToken(token)}
+                                            />
+                                        </Suspense>
 
-                        <button
-                            type="submit"
-                            disabled={formStatus === 'sending'}
-                            className="
+                                        <button
+                                            type="submit"
+                                            disabled={formStatus === 'sending'}
+                                            className="
                                 w-full
                                 rounded-2xl
                                 bg-gradient-to-r
@@ -783,35 +864,35 @@ lg:py-12
                                 hover:scale-[1.02]
                                 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)]
                             "
-                        >
-                            {formStatus === 'sending'
-                                ? 'Sending Message...'
-                                : 'Send Message'}
-                        </button>
+                                        >
+                                            {formStatus === 'sending'
+                                                ? 'Sending Message...'
+                                                : 'Send Message'}
+                                        </button>
 
-                        {formStatus === 'success' && (
-                            <p className="text-green-400 text-center">
-                                ✓ Message sent successfully!
-                            </p>
-                        )}
+                                        {formStatus === 'success' && (
+                                            <p className="text-green-400 text-center">
+                                                ✓ Message sent successfully!
+                                            </p>
+                                        )}
 
-                        {formStatus === 'error' && (
-                            <p className="text-red-400 text-center">
-                                ✗ Failed to send message.
-                            </p>
-                        )}
+                                        {formStatus === 'error' && (
+                                            <p className="text-red-400 text-center">
+                                                ✗ Failed to send message.
+                                            </p>
+                                        )}
 
-                    </form>
+                                    </form>
 
-                </div>
+                                </div>
 
-            </div>
+                            </div>
 
-        </div>
+                        </div>
 
-    </div>
+                    </div>
 
-</Section>
+                </Section>
             </main>
 
             <footer>
