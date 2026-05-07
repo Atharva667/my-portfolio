@@ -1,0 +1,66 @@
+/* Ensure your main container allows for centering if needed */
+.achievements-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    gap: 40px; /* Space between different certification groups */
+    padding: 20px;
+    max-width: 1200px; /* Adjust max width of the entire section if necessary */
+    margin: 0 auto;
+}
+
+.achievement-category {
+    width: 100%;
+    max-width: 800px; /* Control the width of the text content */
+    text-align: left; /* Align text to the left within its container */
+}
+
+.achievement-category h3 {
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444; /* Subtle line under category title */
+    padding-bottom: 5px;
+}
+
+.achievement-category p {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.certificate-grid {
+    display: flex; /* Use flexbox for the images */
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    justify-content: center; /* Center images within the grid */
+    gap: 30px; /* Space between certificates */
+    width: 100%;
+    /* max-width: 1000px;  You might adjust this based on your layout needs */
+}
+
+/* This is the key change for image size */
+.certificate-item img {
+    max-width: 450px; /* Adjust this value to make images smaller (e.g., 400px, 350px) */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #444; /* Subtle border for definition */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.certificate-item img:hover {
+    transform: translateY(-5px); /* Lift slightly on hover */
+}
+
+/* For smaller screens, make images take up more of the available width */
+@media (max-width: 768px) {
+    .certificate-item img {
+        max-width: 300px; /* Even smaller on mobile */
+    }
+    .achievement-category {
+        max-width: 90%; /* Adjust text container for smaller screens */
+        text-align: center; /* Center text on mobile */
+    }
+    .achievement-category h3 {
+        text-align: center;
+    }
+}
