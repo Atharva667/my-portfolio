@@ -768,10 +768,33 @@ html {
 }
 
 .social-links a:hover {
-  color: var(--accent-color);
-  /* Change color on hover */
-  transform: translateY(-5px);
-  /* Lift icon on hover */
+  transform: translateY(-6px) scale(1.12);
+
+  animation: socialGlow 1.5s infinite alternate;
+
+  transition: all 0.35s ease;
+}
+
+@keyframes socialGlow {
+
+  0% {
+    box-shadow:
+      0 0 10px rgba(255,255,255,0.08),
+      0 0 20px rgba(168,85,247,0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 0 18px rgba(59,130,246,0.22),
+      0 0 35px rgba(168,85,247,0.25);
+  }
+
+  100% {
+    box-shadow:
+      0 0 14px rgba(236,72,153,0.18),
+      0 0 28px rgba(34,211,238,0.18);
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -1331,4 +1354,39 @@ body[data-theme="light"] #education .bg-\[var\(--card\)\] {
     z-index: 9999;
   }
 
+}
+
+
+.linkedin .social-icon {
+  color: #0077b5;
+}
+
+.gmail-logo {
+  width: 34px;
+  height: 34px;
+  transition: 0.3s ease;
+}
+
+.gmail-logo:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.github .social-icon {
+  color: #ffffff;
+}
+
+body[data-theme="light"] .github .social-icon {
+  color: #111827;
+}
+
+.linkedin .social-icon {
+  color: #0077B5 !important;
+}
+
+.github .social-icon {
+  color: #111827;
+}
+
+body[data-theme="dark"] .github .social-icon {
+  color: white;
 }

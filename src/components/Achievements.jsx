@@ -3,27 +3,60 @@ import { useState } from "react";
 
 import reactCertificate from "../assets/react-certificate.png";
 import javaCertificate from "../assets/java.png";
+ import TrainingCert from "../assets/Industrial Training Certificate.jpeg";
+import DataScienceCert from "../assets/DataScienceCertificate.png";
 
 const achievementsList = [
+
   {
-    title: "React Development Certificate",
+    title: "Python Development Certificate",
     source: "Coursera",
+
     description:
       "Successfully completed React development certification focused on components, hooks, routing, UI building, and frontend architecture.",
+
     image: reactCertificate,
+
     color: "from-blue-500 via-cyan-500 to-indigo-500",
   },
 
   {
-    title: "Java Programming Certificate",
+    title: "Basic Java Programming Certificate",
     source: "HackerRank",
+
     description:
       "Completed Java programming certification covering OOP concepts, problem solving, algorithms, and backend fundamentals.",
+
     image: javaCertificate,
+
     color: "from-orange-500 via-pink-500 to-red-500",
   },
-];
 
+  {
+    title: "Industrial Training Certificate (Testing)",
+    source: "Vision Academy",
+
+    description:
+      "Successfully completed 12 weeks of Industrial Training in JMeter,Jenkins, AWS, Jira, Auth0, Postman, and GitHub with practical industry-oriented learning.",
+
+    image: TrainingCert,
+
+    color: "from-yellow-500 via-amber-500 to-orange-500",
+  },
+
+  {
+    title: "Data Science Challenge Certificate",
+    source: "Mandi Hariyanna Academy",
+
+    description:
+      "Successfully completed the Data Science Challenge demonstrating proficiency in statistics, machine learning algorithms, and data analysis.",
+
+    image: DataScienceCert,
+
+    color: "from-purple-500 via-fuchsia-500 to-pink-500",
+  },
+
+];
 const Achievements = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);

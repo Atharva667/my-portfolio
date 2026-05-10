@@ -44,10 +44,10 @@ const Header = ({ isScrolled, theme, toggleTheme }) => {
 
                 {/* --- UPDATED: Your nav links now have a special class and onClick handlers --- */}
                 <ul className={`nav-links ${isNavOpen ? 'nav-links-open' : ''}`}>
-                    <li><a href="#projects" onClick={closeNav}>Projects</a></li>  {/* ✅ ADD */}
-                    <li><a href="#skills" onClick={closeNav}>Skills</a></li>
-                    <li><a href="#education" onClick={closeNav}>Education</a></li>
                     <li><a href="#about" onClick={closeNav}>About</a></li>
+                    <li><a href="#skills" onClick={closeNav}>Skills</a></li>
+                    <li><a href="#projects" onClick={closeNav}>Projects</a></li>  {/* ✅ ADD */}
+                    <li><a href="#education" onClick={closeNav}>Education</a></li>
                     <li><a href="#achievements" onClick={closeNav}>Achievements</a></li>
                     <li><a href="#contact" onClick={closeNav}>Contact</a></li>
                     <li className="theme-toggle">
@@ -355,11 +355,36 @@ function App() {
                     <a href="#skills" className="cta-button">View My Skills</a>
 
                     <div className="social-links">
-                        <a href="https://www.linkedin.com/in/atharva-deshpande-223926332/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a
+                            href="https://www.linkedin.com/in/atharva-deshpande-223926332/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            className="linkedin"
+                        >
                             <FaLinkedin className="social-icon" />
                         </a>
-                        <a href="mailto:atharvadeshpande2006@gmail.com" aria-label="Email">
-                            <FaEnvelope className="social-icon" />
+
+                        <a
+                            href="mailto:atharvadeshpande2006@gmail.com"
+                            aria-label="Email"
+                            className="gmail"
+                        >
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg"
+                                alt="Gmail"
+                                className="gmail-logo"
+                            />
+                        </a>
+
+                        <a
+                            href="https://github.com/Atharva667"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            className="github"
+                        >
+                            <FaGithub className="social-icon" />
                         </a>
                     </div>
 
@@ -367,26 +392,6 @@ function App() {
             </div>
 
             <main>
-                {/* 🔥 PROJECTS SECTION – RIGHT AFTER HERO */}
-                <Section id="projects">
-                    <h2>My Projects</h2>
-                    <Suspense fallback={<div className="loader">Loading projects...</div>}>
-                        <Projects />
-                    </Suspense>
-                </Section>
-
-                <Section id="skills">
-                    <Suspense fallback={<div className="loader">Loading skills...</div>}>
-                        <Skills />
-                    </Suspense>
-                </Section>
-
-
-                <Section id="education">
-                    <Suspense fallback={<div className="loader">Loading education...</div>}>
-                        <Education />
-                    </Suspense>
-                </Section>
 
 
                 <Section id="about">
@@ -525,6 +530,32 @@ function App() {
                     </div>
 
                 </Section>
+
+                {/* 🔥 PROJECTS SECTION – RIGHT AFTER HERO */}
+
+                <Section id="skills">
+                    <Suspense fallback={<div className="loader">Loading skills...</div>}>
+                        <Skills />
+                    </Suspense>
+                </Section>
+
+                <Section id="projects">
+                    <h2>My Projects</h2>
+                    <Suspense fallback={<div className="loader">Loading projects...</div>}>
+                        <Projects />
+                    </Suspense>
+                </Section>
+
+
+
+
+                <Section id="education">
+                    <Suspense fallback={<div className="loader">Loading education...</div>}>
+                        <Education />
+                    </Suspense>
+                </Section>
+
+
 
                 <Section id="achievements">
                     <Suspense fallback={<div className="loader">Loading achievements...</div>}>
