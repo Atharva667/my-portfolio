@@ -5,6 +5,9 @@ import reactCertificate from "../assets/react-certificate.png";
 import javaCertificate from "../assets/java.png";
  import TrainingCert from "../assets/Industrial Training Certificate.jpeg";
 import DataScienceCert from "../assets/DataScienceCertificate.png";
+import CyberSecurityCert from "../assets/FoundationsOfCyberSecurityCertificate.webp";
+import PlayItSafeCert from "../assets/PlayItSafe.jpg";
+
 
 const achievementsList = [
 
@@ -21,6 +24,19 @@ const achievementsList = [
   },
 
   {
+  title: "Play It  Safe Manage Security Risks",
+
+  source: "Google • Coursera",
+
+  description:
+    "Successfully completed Google's 'Play It Safe: Manage Security Risks' course through Coursera, covering risk management frameworks, security controls, incident response, compliance, and organizational security best practices.",
+
+  image: PlayItSafeCert,
+
+  color: "from-emerald-500 via-teal-500 to-cyan-500",
+},
+
+  {
     title: "Basic Java Programming Certificate",
     source: "HackerRank",
 
@@ -31,6 +47,21 @@ const achievementsList = [
 
     color: "from-orange-500 via-pink-500 to-red-500",
   },
+
+  {
+  title: "Foundations of Cybersecurity Certificate",
+
+  source: "Google • Coursera",
+
+  description:
+    "Successfully completed Google's Foundations of Cybersecurity course offered through Coursera, gaining knowledge of cybersecurity principles, security operations, risk management, network security fundamentals, and threat analysis.",
+
+  image: CyberSecurityCert,
+
+  color: "from-green-500 via-blue-500 to-cyan-500",
+},
+
+
 
   {
     title: "Industrial Training Certificate (Testing)",
