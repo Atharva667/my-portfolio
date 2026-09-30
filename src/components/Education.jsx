@@ -30,6 +30,16 @@ const educationData = [
       "Focused on frontend development, React, Java, UI/UX, software development, networking, and real-world technical projects.",
     highlight: true,
   },
+
+    {
+    title: "B.Tech In Artificial Intelligence",
+    year: "2026 — 2029",
+    place: "All India Shri Shivaji Memorial Society's College Of Engineering (AISSMS)",
+    location: "Pune, Maharashtra",
+    description:
+      "Pursuing B.Tech in Artificial Intelligence and Machine Learning, building strong foundations in programming, data structures, algorithms, artificial intelligence, and machine learning while developing practical problem-solving and technical skills.z",
+    highlight: false,
+  },
 ];
 
 const Education = () => {
